@@ -22,7 +22,7 @@ namespace Btl_QuanLyNhaSach
         SqlDataAdapter dataAdapter;
 
         // Tạo 1 list tài khoản
-        public List<TaiKhoan> TaiKhoans(string query) // Check tài khoản đăng nhập
+        public List<TaiKhoan> TaiKhoans(string query) // Check tài khoản đăng nhập  
         {
             List<TaiKhoan> taiKhoans= new List<TaiKhoan>();
 
@@ -54,6 +54,7 @@ namespace Btl_QuanLyNhaSach
             }    
         }
 
+
         // Tạo dataTable để đổ dữ liệu vào datagridview
         public DataTable Table(string query)
         {
@@ -67,6 +68,7 @@ namespace Btl_QuanLyNhaSach
             }
             return dataTable;
         }
+        
 
     }
 }

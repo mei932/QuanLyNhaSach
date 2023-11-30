@@ -14,19 +14,20 @@ using Btl_QuanLyNhaSach.CrystalReport;
 
 namespace Btl_QuanLyNhaSach
 {
+    
     public partial class trangchu : Form
     {
         bool sidebarExpand;
         bool hoadonCollapse;
         bool isThoat;
-
+        ModifyTaiKhoan modifyTaiKhoan = new ModifyTaiKhoan();
         public trangchu(string stentk, string smatkhau)
         {
             InitializeComponent();
             
             string query = "SELECT sMaLoai FROM tblTaiKhoan WHERE sTenTk = @stentk AND sMatKhau = @smatkhau";
-            string connectionString = @"Data Source=DESKTOP-IHLHQSB\SQLEXPRESS;Initial Catalog=QuanLyNhaSach;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            /*string connectionString = @"Data Source=DESKTOP-ESFTV9I\SQLEXPRESS;Initial Catalog=SQLHT1;Integrated Security=True";*/
+            using (SqlConnection connection= Connection.GetSqlConnection())
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))

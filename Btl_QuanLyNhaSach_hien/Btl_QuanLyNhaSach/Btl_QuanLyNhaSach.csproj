@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="caub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caub.Designer.cs">
+      <DependentUpon>caub.cs</DependentUpon>
+    </Compile>
     <Compile Include="cryhoadonban.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     <Compile Include="trangchu.Designer.cs">
       <DependentUpon>trangchu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="caub.resx">
+      <DependentUpon>caub.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cryhoadonban.resx">
       <DependentUpon>cryhoadonban.cs</DependentUpon>
     </EmbeddedResource>

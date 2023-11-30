@@ -13,6 +13,7 @@ namespace Btl_QuanLyNhaSach
 {
     public partial class thongketheonam : Form
     {
+        ModifyTaiKhoan modify = new ModifyTaiKhoan();
         public thongketheonam()
         {
             InitializeComponent();
@@ -29,9 +30,9 @@ namespace Btl_QuanLyNhaSach
             int nam = int.Parse(txtNam.Text);
 
             // Tạo kết nối tới CSDL
-            string connectionString = @"Data Source=DESKTOP-IHLHQSB\SQLEXPRESS;Initial Catalog=QuanLyNhaSach;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);
-
+            /*string connectionString = @"Data Source=DESKTOP-ESFTV9I\SQLEXPRESS;Initial Catalog=SQLHT1;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);*/
+            SqlConnection connection = Connection.GetSqlConnection();
             // Tạo command để gọi stored procedure và truyền tham số
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();

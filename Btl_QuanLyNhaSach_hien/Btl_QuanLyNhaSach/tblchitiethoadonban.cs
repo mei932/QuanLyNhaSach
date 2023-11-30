@@ -33,21 +33,22 @@ namespace Btl_QuanLyNhaSach
             }
             else
             {
-                SqlConnection con = Connection.GetSqlConnection();
-                string sql = "SELECT * FROM tblHoaDonBan WHERE sMaHDBan" +
-                    "    = '" + sMaHDBan.Text + "'";
-                SqlCommand cmd = new SqlCommand(sql, con);
-                SqlDataReader myreader; try
+                try
                 {
+                    SqlConnection con = Connection.GetSqlConnection();
+                    string sql = "SELECT * FROM tblChiTietHoaDonBan WHERE sMaHDBan = @sMaHDBan";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@sMaHDBan", sMaHDBan.Text);
                     con.Open();
-                    myreader = cmd.ExecuteReader();
-                    while (myreader.Read())
-                    {
-                        sMaHDBan.Text = myreader.GetString(0);
-                        sTenTk.Text = myreader.GetString(1);
-                        sMaKH.Text = myreader.GetString(2);
-                        dNgayLap.Value = myreader.GetDateTime(3);
-                    }
+
+                    SqlDataReader myreader = cmd.ExecuteReader();
+
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(myreader);
+
+                    dataGridView_ChiTietHDBan.DataSource = dataTable; // Hiển thị kết quả tìm kiếm vào DataGridView
+
+                    con.Close();
                 }
                 catch (Exception ex)
                 {

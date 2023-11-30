@@ -16,7 +16,7 @@ namespace Btl_QuanLyNhaSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new tblsplashscreen());
+            Application.Run(new caub());
         }
     }
 }

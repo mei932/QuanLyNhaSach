@@ -10,7 +10,7 @@ namespace Btl_QuanLyNhaSach
     class Connection
     {
         // Đường liên kết tới sql
-        private static string stringConnection = @"Data Source=DESKTOP-IHLHQSB\SQLEXPRESS;Initial Catalog=QuanLyNhaSach;Integrated Security=True";
+        private static string stringConnection = @"Data Source=DESKTOP-ESFTV9I\SQLEXPRESS;Initial Catalog=SQLHT1;Integrated Security=True";
        
 
         public static SqlConnection GetSqlConnection()
@@ -19,3 +19,7 @@ namespace Btl_QuanLyNhaSach
         }
     }
 }
+//Some files need fixing
+// connection
+// thongketheonam.cs
+//trangchu.cs
